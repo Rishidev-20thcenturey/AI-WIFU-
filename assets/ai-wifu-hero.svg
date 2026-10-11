@@ -48,9 +48,6 @@
       <feGaussianBlur stdDeviation="5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <clipPath id="podClip">
-      <rect x="1000" y="96" width="292" height="388" rx="145"/>
-    </clipPath>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
       <path d="M0,0 L6,3 L0,6" fill="none" stroke="#6a8bb4" stroke-width="1.2"/>
     </marker>
@@ -140,7 +137,7 @@
         <ellipse cx="442" cy="252" rx="90" ry="112" fill="url(#glowA)" filter="url(#blur)"/>
         <ellipse cx="442" cy="350" rx="70" ry="12" fill="#52d9f5" fill-opacity=".16" filter="url(#blur)"/>
 
-        <g clip-path="url(#podClip)">
+        <g>
           <ellipse cx="442" cy="224" rx="64" ry="72" fill="#0b182b" stroke="#4b81a7" stroke-opacity=".75"/>
           <path d="M384 216C373 170 397 143 427 146C457 127 497 151 504 190L501 247L478 225L463 180L425 192L400 232L389 253Z" fill="url(#pink)" stroke="#ffb6eb" stroke-opacity=".55" stroke-width="1.5"/>
           <path d="M393 195C402 164 426 155 448 162C468 167 484 185 485 207L476 226C471 202 461 188 446 182C429 177 412 186 401 208Z" fill="#f2b7ff"/>
