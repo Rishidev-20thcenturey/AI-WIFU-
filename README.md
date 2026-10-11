@@ -55,7 +55,7 @@ The visual direction is a futuristic companion console: dark surfaces, holograph
 | **Companion progress** | Track an affection/bond score, interaction counts, call history, and related UI feedback. |
 | **Snapshots** | Capture and preview a companion snapshot through the app's snapshot interface. |
 
-Some items depend on browser permissions or live external APIs; see [Configuration](#-configuration) and [Privacy, security, and known limitations](#-privacy-security-and-known-limitations).
+Some items depend on browser permissions or live external APIs; see [Run locally](#-run-locally) and [Privacy, security, and known limitations](#-privacy-security-and-known-limitations).
 
 ## ◇ System architecture
 
@@ -262,7 +262,7 @@ AI-WIFU is a prototype. Review these constraints before running it with real per
 ### API-key handling
 
 - The preferred full-stack path reads `GEMINI_API_KEY` on the server.
-- A client-side fallback in `src/services/geminiService.ts` can read `GEMINI_USER_API_KEY` from browser storage in some hosting/error paths. A key available to frontend code is exposed to that browser environment; do not treat it as a server secret.
+- A client-side fallback in [`geminiService.ts`](src/services/geminiService.ts) can read `GEMINI_USER_API_KEY` from browser storage in some hosting/error paths. A key available to frontend code is exposed to that browser environment; do not treat it as a server secret.
 - API routes in `server.ts` do not show an application authentication layer or a general request rate limiter. Do **not** expose this backend to the public internet with a valuable API key until you have added appropriate access controls, quotas/rate limits, request validation, logging, and deployment hardening.
 - The JSON request body limit is set to 20 MB; that alone is not comprehensive request or abuse protection.
 
