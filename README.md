@@ -1,7 +1,7 @@
 <!-- AI-WIFU README: current repository guide and project status. -->
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rishidev-20thcenturey/AI-WIFU-/main/assets/ai-wifu-hero.svg" alt="AI-WIFU visual banner representing its animated anime companion, live voice, Gemini AI, avatar customization, and browser memory features." width="100%" />
+  <img src="https://raw.githubusercontent.com/Rishidev-20thcenturey/AI-WIFU-/main/Screenshot_20261011-180035%20%281%29.png" alt="Actual AI-WIFU lobby screenshot showing the animated 3D companion, room background, voice-call controls, camera and vision controls, affection level, avatar mode switch, and customization actions." width="600" />
 </p>
 
 <p align="center">
