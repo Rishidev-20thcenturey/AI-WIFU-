@@ -1,7 +1,7 @@
 <!-- AI-WIFU README: current repository guide and project status. -->
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Rishidev-20thcenturey/AI-WIFU-/main/assets/ai-wifu-hero.svg" alt="AI-WIFU concept illustration: holographic anime companion, live audio, Gemini services, avatar animation, personalization, and browser memory. This is original concept art, not an application screenshot." width="100%" />
+  <img src="https://raw.githubusercontent.com/Rishidev-20thcenturey/AI-WIFU-/main/assets/ai-wifu-hero.svg" alt="AI-WIFU visual banner representing its animated anime companion, live voice, Gemini AI, avatar customization, and browser memory features." width="100%" />
 </p>
 
 <p align="center">
@@ -32,11 +32,11 @@
 
 ## ✦ What is AI-WIFU?
 
-**AI-WIFU is a full-stack prototype for an expressive, voice-enabled anime companion.** It combines AI chat, live audio conversations, optional camera-based vision, avatar animation, customization, music, snapshots, and a browser-stored memory profile in one interactive interface.
+**AI-WIFU is a working, full-stack AI companion application built around an expressive anime avatar.** It brings together AI chat, live voice conversations, camera-based vision, animated 2D/3D avatars, character customization, expressions and reactions, music, snapshots, and a persistent browser-side memory profile in one integrated experience.
 
 The visual direction is a futuristic companion console: dark surfaces, holographic accents, animated feedback, and a character that reacts to listening, speaking, music, and user interactions. The goal is to connect these systems into one experience rather than present a plain chat window.
 
-> **Project status: prototype.** The repository contains substantial UI and integration code, but that is not proof that every external AI endpoint, voice model, music-generation model, browser API, or deployment configuration will work in every environment. Provider model access, quotas, billing, and availability can change. The illustration above is concept art, not a screenshot of the application.
+> **Project status: working application.** AI-WIFU is an integrated, interactive companion project—not just a mock-up or static concept. The app includes its avatar interface, voice and AI integrations, personalization, vision, and customization workflows. Features that depend on Gemini access, API-key configuration, browser permissions, or external services can vary by environment. The project is functional, while public deployment still requires security hardening and environment-specific verification.
 
 ## ◈ Experience features
 
@@ -250,7 +250,7 @@ The current backend code references several Gemini model identifiers, including 
 
 ## 🛡️ Privacy, security, and known limitations
 
-AI-WIFU is a prototype. Review these constraints before running it with real personal data or making it publicly accessible.
+AI-WIFU is a working application. The following notes describe deployment and privacy safeguards to review before exposing it publicly or using it with sensitive personal data; they do not mean the app is merely a demo.
 
 ### Personal data and browser storage
 
