@@ -1,7 +1,7 @@
 <!-- AI-WIFU README: current repository guide and project status. -->
 
 <p align="center">
-  <img src="assets/ai-wifu-hero.svg" alt="AI-WIFU concept illustration: holographic anime companion, live audio, Gemini services, avatar animation, personalization, and browser memory. This is original concept art, not an application screenshot." width="100%" />
+  <img src="https://raw.githubusercontent.com/Rishidev-20thcenturey/AI-WIFU-/main/assets/ai-wifu-hero.svg" alt="AI-WIFU concept illustration: holographic anime companion, live audio, Gemini services, avatar animation, personalization, and browser memory. This is original concept art, not an application screenshot." width="100%" />
 </p>
 
 <p align="center">
