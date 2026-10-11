@@ -43,7 +43,7 @@ The visual direction is a futuristic companion console: dark surfaces, holograph
 | Capability | What the current code is built to do |
 |---|---|
 | **Character presets** | Switch among six built-in character profiles, each with its own personality, voice defaults, appearance, and starter prompts. |
-| **Avatar engines** | Render an animated 2D canvas character or a Three.js-based 3D VRM avatar. The 3D path includes custom VRM file upload. |
+| **Avatar engines** | Render an animated 2D canvas character or a Three.js-based 3D VRM avatar. The 3D path includes custom VRM file upload via [`VRMCharacterCanvas.tsx`](src/components/VRMCharacterCanvas.tsx). |
 | **Live voice conversation** | Connect to a backend WebSocket at `/api/live` and bridge microphone audio to Gemini Live; receive audio chunks and transcription events. |
 | **Chat with generated voice** | Send character-aware chat requests through the Express API, with server-side Gemini calls and a graceful fallback response path. |
 | **Speech modes** | Use browser speech recognition / recording fallbacks and optional Gemini transcription and text-to-speech endpoints. |
@@ -51,7 +51,7 @@ The visual direction is a futuristic companion console: dark surfaces, holograph
 | **Camera vision** | Capture a camera frame or use an image for a vision request; a floating live-camera panel is also provided. |
 | **Wardrobe and environments** | Adjust supported hair and eye colors, hair styles, outfits, accessories, and background scenes. |
 | **Music and audio** | Play procedural built-in lo-fi / anime-synth tracks, upload a local audio file, visualize audio frequencies, and use the optional Lyria generation endpoint. |
-| **Memory core** | Manage a user profile, nickname, notes, categorized facts, and conversation memory stored in the browser's local storage. |
+| **Memory core** | Manage a user profile, nickname, notes, categorized facts, and conversation memory stored in the browser's local storage via [`memoryEngine.ts`](src/services/memoryEngine.ts). |
 | **Companion progress** | Track an affection/bond score, interaction counts, call history, and related UI feedback. |
 | **Snapshots** | Capture and preview a companion snapshot through the app's snapshot interface. |
 
@@ -86,13 +86,13 @@ flowchart LR
 | Layer | Technology | Location |
 |---|---|---|
 | UI | React 19, TypeScript, Tailwind CSS 4, Motion, Lucide | `src/` |
-| Build and dev server | Vite 6, React plugin, Tailwind Vite plugin | `vite.config.ts`, `package.json` |
-| HTTP backend | Express 4, Node.js, dotenv | `server.ts` |
-| Live audio transport | `ws` WebSocket server and browser WebSocket client | `server.ts`, `src/services/geminiLiveClient.ts` |
-| AI provider integration | `@google/genai` | `server.ts`, `src/services/geminiService.ts` |
-| 3D avatar rendering | Three.js, `@pixiv/three-vrm`, GLTF loader | `src/components/VRMCharacterCanvas.tsx` |
-| Local audio | Web Audio API, browser speech interfaces | `src/services/audioEngine.ts`, `src/services/musicEngine.ts` |
-| Local memory | Browser `localStorage` | `src/services/memoryEngine.ts`, `src/App.tsx` |
+| Build and dev server | Vite 6, React plugin, Tailwind Vite plugin | [`vite.config.ts`](vite.config.ts), [`package.json`](package.json) |
+| HTTP backend | Express 4, Node.js, dotenv | [`server.ts`](server.ts) |
+| Live audio transport | `ws` WebSocket server and browser WebSocket client | [`server.ts`](server.ts), [`geminiLiveClient.ts`](src/services/geminiLiveClient.ts) |
+| AI provider integration | `@google/genai` | [`server.ts`](server.ts), [`geminiService.ts`](src/services/geminiService.ts) |
+| 3D avatar rendering | Three.js, `@pixiv/three-vrm`, GLTF loader | [`VRMCharacterCanvas.tsx`](src/components/VRMCharacterCanvas.tsx) |
+| Local audio | Web Audio API, browser speech interfaces | [`audioEngine.ts`](src/services/audioEngine.ts), [`musicEngine.ts`](src/services/musicEngine.ts) |
+| Local memory | Browser `localStorage` | [`memoryEngine.ts`](src/services/memoryEngine.ts), [`App.tsx`](src/App.tsx) |
 
 ### Request and data flow
 
@@ -194,11 +194,11 @@ The build script runs `vite build` and bundles `server.ts` to `dist/server.cjs`;
 | `bun run preview` | Preview the Vite frontend bundle only |
 | `bun run clean` | Remove `dist` and the legacy `server.js` output |
 
-The package currently defines **no dedicated `test` script**. `lint` is a TypeScript check, not a unit or end-to-end test suite. Build and lint commands are documented from the checked-in scripts; their success is not asserted by this README.
+The available scripts are listed in [`package.json`](package.json). The package currently defines **no dedicated `test` script**. `lint` is a TypeScript check, not a unit or end-to-end test suite. Build and lint commands are documented from the checked-in scripts; their success is not asserted by this README.
 
 ## 🔌 Backend API surface
 
-The following routes are defined in `server.ts`. They are integration entry points, not a promise that all model IDs remain enabled by the provider.
+The following routes are defined in [`server.ts`](server.ts). They are integration entry points, not a promise that all model IDs remain enabled by the provider.
 
 | Method / protocol | Path | Purpose |
 |---|---|---|
