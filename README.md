@@ -28,6 +28,10 @@
   <a href="#-privacy-security-and-known-limitations">Privacy & limitations</a>
 </p>
 
+<p align="center">
+  <strong>🌐 <a href="https://live-anime-ai-waifu.ai.studio/">Try the live AI-WIFU companion app →</a></strong>
+</p>
+
 ---
 
 ## ✦ What is AI-WIFU?
@@ -285,6 +289,12 @@ For a reliable next iteration, prioritize engineering safety alongside presentat
 4. Add explicit memory export/delete controls and a concise data-flow notice in the app UI.
 5. Pin and verify the AI model identifiers used by each provider route, with clear fallbacks for unavailable services.
 6. Add a license and document supported deployment targets only after they are verified.
+
+## Contact
+
+For questions, feedback, or collaboration about AI-WIFU, contact:
+
+**Email:** [rishirajc406@gmail.com](mailto:rishirajc406@gmail.com)
 
 ## Contributing
 
